@@ -1,7 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const story = sequelize.define('story', {
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      unique: true,
+    },
     content: DataTypes.TEXT,
     imageUrl: DataTypes.STRING
   }, {});
